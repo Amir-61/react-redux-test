@@ -1,4 +1,5 @@
 import React,{Fragment, useEffect,useState} from 'react'
+// import { connect } from 'react-redux';
 
 // class Photos extends React.Component {
 const Photos = () =>  {
@@ -70,5 +71,21 @@ const Photos = () =>  {
     </Fragment>
   )
 }
+
+// const mapStateToProps = (state) => {
+//   return {
+//     notifications: state.notifications,
+//   };
+// };
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     clearNotification: id => {
+//       dispatch(clearNotification(id));
+//     },
+//   };
+// };
+// export default connect(mapStateToProps, mapDispatchToProps)(Photos)
+
 
 export default Photos
