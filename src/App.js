@@ -6,7 +6,7 @@ import ErrorBoundary from './components/error-boundry/error-boundry.component'
 import HomePage from './pages/homepage.component'
 
 
-function App() {
+const App = () => {
   return (
     <div className='App'>
       <ErrorBoundary>
