@@ -2,8 +2,11 @@ import {postActionTypes} from './posts.actionTypes'
 
 const INITIAL_STATE = {
   collections: [],
+  count: undefined,
   isFetchLoading: undefined,
-  error: undefined
+  isFetchCountLoading: undefined,
+  error: undefined,
+  CountError: undefined
 }
 
 const postsReducer = (state = INITIAL_STATE, action) => {
@@ -13,12 +16,31 @@ const postsReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isFetchLoading: true
       }
+    case postActionTypes.FETCH_POSTS_COUNT_START:
+      return {
+        ...state,
+        isFetchCountLoading: true
+      }
     case postActionTypes.FETCH_POSTS_FAILURE:
       return {
         ...state,
         isFetchLoading: false,
         error: action.payload
       }
+    case postActionTypes.FETCH_POSTS_COUNT_FAILURE:
+      return {
+        ...state,
+        isFetchCountLoading: false,
+        CountError: action.payload
+      }
+
+    case postActionTypes.FETCH_POSTS_COUNT_SUCCESS:
+        return {
+          ...state,
+          isFetchCountLoading: false,
+          CountError: undefined,
+          count: action.payload
+        }
     case postActionTypes.FETCH_POSTS_SUCCESS:
         return {
           ...state,

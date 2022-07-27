@@ -16,3 +16,8 @@ export const postsErrorSelection = createSelector(
   [postsSelector],
   (posts) => posts.error
 )
+
+export const postsCountSelection = createSelector(
+  [postsSelector],
+  (posts) => posts.count
+)
